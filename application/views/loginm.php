@@ -40,7 +40,7 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form" action="">
+      <form class="login-form" action="<?php echo base_url().'index.php/sesion/init_sesion' ; ?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
             <!--<img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">-->
@@ -50,14 +50,14 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
-            <input id="username" type="email" placeholder="Email address" required="required">
+            <input id="username" type="email" name="email" placeholder="Email address" required="required">
             
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="material-icons prefix">lock_outline</i>
-            <input id="password" type="password" placeholder="Password" required="required">
+            <input id="password" type="password" name="password" placeholder="Password" required="required">
           </div>
         </div>
         <div class="row">          

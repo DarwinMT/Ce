@@ -51,12 +51,12 @@
 <body>
 <div class="container">
 
-    <form class="form-signin">
+    <form class="form-signin" action="<?php echo base_url().'index.php/sesion/init_sesion' ; ?>" method="post">
         <h2 class="form-signin-heading">
         	Iniciar sesión
         </h2>
-        <input type="email" class="form-control" placeholder="Email address" required="required">
-        <input type="password" class="form-control" placeholder="Password" required="required">
+        <input type="email" class="form-control" name="email" placeholder="Email address" required="required">
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Recordar contraseña
         </label>
