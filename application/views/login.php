@@ -51,7 +51,7 @@
 <body>
 <div class="container">
 
-    <form class="form-signin" action="<?php echo base_url().'index.php/sesion/init_sesion' ; ?>" method="post">
+    <form class="form-signin" action="<?php echo base_url().'sesion/init_sesion' ; ?>" method="post">
         <h2 class="form-signin-heading">
         	Iniciar sesión
         </h2>

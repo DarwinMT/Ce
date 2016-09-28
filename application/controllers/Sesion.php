@@ -16,10 +16,10 @@ class Sesion extends CI_Controller
 	public function index()
 	{	
 		//login boostrap 3
-		//$this->load->view('login');
+		$this->load->view('login');
 
 		//login materialize 
-		$this->load->view('loginm');
+		//$this->load->view('loginm');
 	}
 
 	public function Init_sesion()
@@ -30,11 +30,15 @@ class Sesion extends CI_Controller
 		$pass=md5($pass);
 		$validar=$this->Usuario_model->Get_usuarioexistente($email,$pass);
 		if($validar==true){
-			//$this->load->view('homeb');
-			$this->load->view('homem');
+			$this->load->view('homeb');
+			//$this->load->view('homem');
 		}else{
-			//$this->load->view('login');
-			$this->load->view('loginm');
+			$this->load->view('login');
+			//$this->load->view('loginm');
 		}
+	}
+	public function hola()
+	{
+		echo "Holaaaaaaaa";
 	}
 }
