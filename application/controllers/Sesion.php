@@ -37,8 +37,4 @@ class Sesion extends CI_Controller
 			//$this->load->view('loginm');
 		}
 	}
-	public function hola()
-	{
-		echo "Holaaaaaaaa";
-	}
 }
