@@ -7,5 +7,9 @@ app.config(function($routeProvider){
 	});
 });
 app.controller("home",function($scope){
-	$scope.Name="Hola"
+	$scope.Title="Citas";
+
+	$scope.ModifyCita=function() {
+		$("#EditarCita").modal("show");
+	};
 });
