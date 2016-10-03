@@ -22,7 +22,8 @@
 
 
 	<!--Aplicacion angular-->
-	<script type="text/javascript" src="<?php  echo base_url();?>/app/app/app.js"></script>	
+	<script type="text/javascript" src="<?php  echo base_url();?>/app/app/app.js"></script>
+	<script type="text/javascript" src="<?php  echo base_url();?>/app/app/controler.js"></script>
 
 </head>
 <body ng-app="Ce" ng-cloak>
