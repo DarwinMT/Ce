@@ -8,7 +8,7 @@ class Sesion extends CI_Controller
 	public function __construct(){
 		parent::__construct();
 		//$this->load->model('usuario_model');
-		//$this->load->library('session');
+		$this->load->library('session');
 		$this->load->helper('url');
 		
 	}
@@ -30,6 +30,14 @@ class Sesion extends CI_Controller
 		$pass=md5($pass);
 		$validar=$this->Usuario_model->Get_usuarioexistente($email,$pass);
 		if($validar==true){
+
+			$DatosUsuario=array(
+				'Id' => 1,
+				'Nombre'=> "Darwin Taraṕuez",
+				'Rol'=> 1,
+				'Permisos'=> 2 );
+			$this->session->set_userdata("DataUser",$DatosUsuario);
+
 			$this->load->view('homeb');
 			//$this->load->view('homem');
 		}else{
