@@ -31,18 +31,21 @@ class Sesion extends CI_Controller
 		$validar=$this->Usuario_model->Get_usuarioexistente($email,$pass);
 		if($validar==true){
 
-			$DatosUsuario=array(
+			$DatosUsuario=$this->Usuario_model->Get_datosusuario($email,$pass);
+			/*$DatosUsuario=array(
 				'Id' => 1,
 				'Nombre'=> "Darwin Taraṕuez",
 				'Rol'=> 1,
-				'Permisos'=> 2 );
+				'Permisos'=> 2 );*/
 			$this->session->set_userdata("DataUser",$DatosUsuario);
 
-			$this->load->view('homeb');
-			//$this->load->view('homem');
+			redirect(base_url()."/Admin");
 		}else{
-			$this->load->view('login');
-			//$this->load->view('loginm');
+			redirect(base_url()."/Sesion");
 		}
+	}
+	public function Close_session()
+	{
+		$this->session->sess_destroy();
 	}
 }
