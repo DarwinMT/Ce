@@ -28,12 +28,12 @@
 			    selectMonths: true, // Creates a dropdown to control month
 			    selectYears: 15 // Creates a dropdown of 15 years to control year
 			});
+			$(".dropdown-button").dropdown();
 
 
 		});
 
 	</script>
-
 
 	<!--Aplicacion angular-->
 	<script type="text/javascript" src="<?php  echo base_url();?>/app/app/appm.js"></script>
@@ -47,20 +47,38 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="#333">Components</a></li>
+        <li><a href="" class="dropdown-button" data-activates="dropdown2" ><i class="material-icons left">perm_identity</i>
+        	<?php 
+                echo $usuario["Nombre"];
+             ?> <i class="material-icons right">arrow_drop_down</i>
+        </a></li>
         
       </ul>
       <ul class="side-nav " id="mobile-demo">
         <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="#333">Components</a></li>
+        <li><a href="" class="dropdown-button" data-activates="dropdown1" ><i class="material-icons left">perm_identity</i>
+        	<?php 
+                echo $usuario["Nombre"];
+             ?> <i class="material-icons right">arrow_drop_down</i>
+        </a></li>
         
       </ul>
 
 
     </div>
   </nav>
+
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="saliruser"><i class="material-icons left">settings</i> Salir</a></li>
+</ul>
+
+<ul id="dropdown2" class="dropdown-content">
+  <li><a href="saliruser"><i class="material-icons left">settings</i> Salir</a></li>
+</ul>
+
+
 </div>
 <div class="container">
 	<div class="row">

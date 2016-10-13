@@ -44,7 +44,13 @@
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="glyphicon glyphicon-user"></i> <?php 
+                echo $usuario["Nombre"];
+             ?> <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                  <li><a href="saliruser"><i class="glyphicon glyphicon-asterisk"></i> Salir</a></li>
+                </ul>
+             </li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -58,8 +64,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
+            <li><a href="#Report">Reports</a></li>
+            <li><a href="#333">Analytics</a></li>
             <li><a href="#">Export</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -80,7 +86,8 @@
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="row placeholders">
-            
+
+
             <div ng-view></div>
             
             

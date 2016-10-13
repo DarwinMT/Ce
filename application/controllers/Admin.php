@@ -16,11 +16,15 @@ class Admin extends CI_Controller
 
 	public function index()
 	{	
-		if($this->session->has_userdata("DataUser")==true){
-			$this->load->view('homeb');
-			//$this->load->view('homem');
+		if($this->session->userdata("Id")>0){
+			$datos["usuario"]=$this->session->userdata();
+			$this->load->view('homeb',$datos);
+			//$this->load->view('homem',$datos);
 		}else{
+			$this->session->sess_destroy();
 			redirect(base_url()."/Sesion");
 		}
+
+		
 	}
 }

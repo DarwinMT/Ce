@@ -35,6 +35,7 @@ class Usuario_model extends CI_Model
 		$this->db->where("usuario.estado",1);
 		$data=$this->db->get();
 		//return $data->result();
-		return $data->result_array();
+		//return $data->result_array();
+		return $data->row();
 	}
 }

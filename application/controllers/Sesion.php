@@ -32,12 +32,12 @@ class Sesion extends CI_Controller
 		if($validar==true){
 
 			$DatosUsuario=$this->Usuario_model->Get_datosusuario($email,$pass);
-			/*$DatosUsuario=array(
-				'Id' => 1,
-				'Nombre'=> "Darwin Taraṕuez",
+			$DatosUsuario=array(
+				'Id' => $DatosUsuario->id_du,
+				'Nombre'=> $DatosUsuario->apelllido." ".$DatosUsuario->nombre,
 				'Rol'=> 1,
-				'Permisos'=> 2 );*/
-			$this->session->set_userdata("DataUser",$DatosUsuario);
+				'Permisos'=> 2 );
+			$this->session->set_userdata($DatosUsuario);
 
 			redirect(base_url()."/Admin");
 		}else{
@@ -47,5 +47,6 @@ class Sesion extends CI_Controller
 	public function Close_session()
 	{
 		$this->session->sess_destroy();
+		redirect(base_url()."/Sesion");
 	}
 }
