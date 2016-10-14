@@ -5,8 +5,8 @@ app.config(function($routeProvider){
 		templateUrl : "app/view/bo/main.html",
 		controller : "home"
 	})
-	.when("/Report",{
-		templateUrl : "app/view/bo/main.html",
+	.when("/AddPersona",{
+		templateUrl : "app/view/bo/persona/add.html",
 		controller : "home"
 	})
 	.otherwise({

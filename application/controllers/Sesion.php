@@ -33,8 +33,8 @@ class Sesion extends CI_Controller
 
 			$DatosUsuario=$this->Usuario_model->Get_datosusuario($email,$pass);
 			$DatosUsuario=array(
-				'Id' => $DatosUsuario->id_du,
-				'Nombre'=> $DatosUsuario->apelllido." ".$DatosUsuario->nombre,
+				'Id' => $DatosUsuario->id_pe,
+				'Nombre'=> $DatosUsuario->apellido." ".$DatosUsuario->nombre,
 				'Rol'=> 1,
 				'Permisos'=> 2 );
 			$this->session->set_userdata($DatosUsuario);

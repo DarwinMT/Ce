@@ -29,7 +29,7 @@ class Usuario_model extends CI_Model
 	{
 		$this->db->select("*");
 		$this->db->from("usuario");
-		$this->db->join("datos_usuario", "datos_usuario.id_du= usuario.id_du");
+		$this->db->join("persona", "persona.id_pe= usuario.id_pe");
 		$this->db->where("usuario.username",$user);
 		$this->db->where("usuario.password",$pass);
 		$this->db->where("usuario.estado",1);

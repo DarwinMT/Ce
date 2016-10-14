@@ -41,8 +41,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="">Empresa</a></li>
+            <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personas
+            <span class="caret"></span> </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#AddPersona"><i class="glyphicon glyphicon-plus"></i> Agregar Persona</a></li>
+                  <li class="divider"></li>
+                  <li><a href=""><i class="glyphicon glyphicon-list-alt"></i> Administradores</a></li>
+
+                  <li class="divider"></li>
+                  <li><a href=""><i class="glyphicon glyphicon-list-alt"></i> Empleados</a></li>
+
+                  <li class="divider"></li>
+                  <li><a href=""><i class="glyphicon glyphicon-list-alt"></i> Proveedores</a></li>
+
+                  <li class="divider"></li>
+                  <li><a href=""><i class="glyphicon glyphicon-list-alt"></i> Clientes</a></li>
+                </ul>
+
+            </li>
             <li><a href="#">Profile</a></li>
             <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><i class="glyphicon glyphicon-user"></i> <?php 
                 echo $usuario["Nombre"];
