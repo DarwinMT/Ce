@@ -7,7 +7,7 @@ app.config(function($routeProvider){
 	})
 	.when("/AddPersona",{
 		templateUrl : "app/view/bo/persona/add.html",
-		controller : "home"
+		controller : "AgregarPersona"
 	})
 	.otherwise({
         template : "<h1>Nada</h1><p>Ejemplo de pagina no encotrada,</p>"

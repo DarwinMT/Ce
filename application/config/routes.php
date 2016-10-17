@@ -57,3 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 //login inicion 
 $route['login'] = 'sesion/init_sesion';
 $route['saliruser'] = 'sesion/close_session';
+
+
+//tipo persona
+$route['getTpersona'] = 'persona/gettipopersona';
