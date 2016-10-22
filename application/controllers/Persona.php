@@ -32,4 +32,20 @@ class Persona extends CI_Controller
 		$this->load->model('TipoPersona_model');
 		echo json_encode($this->TipoPersona_model->Get_tipopersona());		
 	}
+	public function settpersona()
+	{
+		//$persona = json_decode(file_get_contents('php://input'), true);
+		//$aux['ci']
+		$this->load->model('TipoPersona_model');
+		$_POST = json_decode(file_get_contents('php://input'), true);
+		$persona = $this->input->post();
+		$respuesta=$this->TipoPersona_model->add_persona($persona);
+		if($respuesta>0){
+			echo $respuesta;
+		}else{
+			echo 0;
+		}
+
+	}
+
 }

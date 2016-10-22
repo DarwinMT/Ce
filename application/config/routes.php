@@ -61,3 +61,4 @@ $route['saliruser'] = 'sesion/close_session';
 
 //tipo persona
 $route['getTpersona'] = 'persona/gettipopersona';
+$route['addTpersona']['post'] = 'persona/settpersona';

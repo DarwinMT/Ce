@@ -33,5 +33,11 @@ class TipoPersona_model extends CI_Model
 		return $data->row();
 
 	}
+	public function add_persona($persona)
+	{
+		$this->db->insert("persona",$persona);
+		$id = $this->db->insert_id();
+		return $id;
+	}
 
 }

@@ -22,22 +22,45 @@ app.controller("AgregarPersona",function($scope,$http){
 		});	
 	};
 
+	$scope.ClearAll=function() {
+		$scope.CmbTipp="";
+		$scope.ci="";
+		$scope.NombreP="";
+		$scope.ApellidoP="";
+		$("#FechaNac").val("");
+	};
+
 	$scope.AddPersona=function () {
 		if($scope.CmbTipp!="" & $scope.CmbTipp!=undefined){
 			$scope.Persona={
-				TipoPersona: $scope.CmbTipp,
-				Ci: $scope.ci,
-				FechaN :$("#FechaNac").val(),
-				NomreP: $scope.NombreP,
-				ApellidoP : $scope.ApellidoP
+				id_tp: $scope.CmbTipp,
+				ci: $scope.ci,
+				nombre: $scope.NombreP,
+				apellido : $scope.ApellidoP,
+				fechaN :$("#FechaNac").val()
 			};
 			
+			$http.post("addTpersona",$scope.Persona)
+			.success(function(data){
+				if(data!=0){
+					$scope.MensajeError="Se guardo correctamente";
+					$("#MnsjErr").modal("show");
+					$scope.ClearAll();
+				}else{
+					$scope.MensajeError="Error al guardar";
+					$("#MnsjErr").modal("show");
+					$scope.ClearAll();
+				}
+			})
+			.error(function(data){
+			});
+
 		}else{
 			$scope.MensajeError="Llene los campos para guardar..!!";
 			$("#MnsjErr").modal("show");
 		}
 
-		console.log($scope.Persona);
+		
 	};
 
 });
