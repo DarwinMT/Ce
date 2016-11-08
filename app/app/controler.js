@@ -11,6 +11,7 @@ app.controller("AgregarPersona",function($scope,$http){
 	$scope.MensajeError="";
 	$scope.TipoPersona=[];
 	$scope.Persona={};
+	
 	$scope.LoadTipoPersona=function () {
 		
 		$http.get("getTpersona")
@@ -31,6 +32,7 @@ app.controller("AgregarPersona",function($scope,$http){
 	};
 
 	$scope.AddPersona=function () {
+
 		if($scope.CmbTipp!="" & $scope.CmbTipp!=undefined){
 			$scope.Persona={
 				id_tp: $scope.CmbTipp,
@@ -40,7 +42,26 @@ app.controller("AgregarPersona",function($scope,$http){
 				fechaN :$("#FechaNac").val()
 			};
 			
-			$http.post("addTpersona",$scope.Persona)
+			var files = $("#txtFile").get(0).files;
+	        var data = new FormData();
+	        for (i = 0; i < files.length; i++) {
+	            data.append("file" + i, files[i]);
+	        }
+	        data.append("Datos",JSON.stringify($scope.Persona));
+	        
+	        $http.post("addTpersona",data,{
+	        	headers:{
+	        		'Content-Type': undefined
+	        	}
+	        })
+			.success(function(res){
+				console.log(res);
+			})
+			.error(function(res){
+			});
+
+
+			/*$http.post("addTpersona",$scope.Persona)
 			.success(function(data){
 				if(data!=0){
 					$scope.MensajeError="Se guardo correctamente";
@@ -53,14 +74,13 @@ app.controller("AgregarPersona",function($scope,$http){
 				}
 			})
 			.error(function(data){
-			});
+			});*/
 
 		}else{
 			$scope.MensajeError="Llene los campos para guardar..!!";
 			$("#MnsjErr").modal("show");
 		}
-
-		
 	};
 
 });
+
