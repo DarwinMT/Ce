@@ -56,7 +56,7 @@
                   <li><a href=""><i class="glyphicon glyphicon-list-alt"></i> Proveedores</a></li>
 
                   <li class="divider"></li>
-                  <li><a href=""><i class="glyphicon glyphicon-list-alt"></i> Clientes</a></li>
+                  <li><a href="#ListClient"><i class="glyphicon glyphicon-list-alt"></i> Clientes</a></li>
                 </ul>
 
             </li>

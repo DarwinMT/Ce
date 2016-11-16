@@ -55,15 +55,7 @@ app.controller("AgregarPersona",function($scope,$http){
 	        	}
 	        })
 			.success(function(res){
-				console.log(res);
-			})
-			.error(function(res){
-			});
-
-
-			/*$http.post("addTpersona",$scope.Persona)
-			.success(function(data){
-				if(data!=0){
+				if(parseInt(res)>0){
 					$scope.MensajeError="Se guardo correctamente";
 					$("#MnsjErr").modal("show");
 					$scope.ClearAll();
@@ -72,6 +64,13 @@ app.controller("AgregarPersona",function($scope,$http){
 					$("#MnsjErr").modal("show");
 					$scope.ClearAll();
 				}
+			})
+			.error(function(res){
+			});
+
+
+			/*$http.post("addTpersona",$scope.Persona)
+			.success(function(data){
 			})
 			.error(function(data){
 			});*/
@@ -84,3 +83,6 @@ app.controller("AgregarPersona",function($scope,$http){
 
 });
 
+app.controller("ListaClientes",function($scope,$http){
+	$scope.Lista="Lista personas";
+});

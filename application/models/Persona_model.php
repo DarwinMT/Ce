@@ -20,7 +20,7 @@ class Persona_model extends CI_Model
 	public function set_avatarpersona($id,$url)
 	{
 		$this->db->set("avatar",$url);
-		$this->db->where("id_p",$id);
+		$this->db->where("id_pe",$id);
 		$this->db->update("persona");
 
 		return $this->db->affected_rows();

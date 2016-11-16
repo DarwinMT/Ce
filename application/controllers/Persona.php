@@ -29,8 +29,8 @@ class Persona extends CI_Controller
 	}
 	public function gettipopersona()
 	{
-		$this->load->model('Persona_model');
-		echo json_encode($this->Persona_model->Get_tipopersona());		
+		$this->load->model('TipoPersona_model');
+		echo json_encode($this->TipoPersona_model->Get_tipopersona());		
 	}
 	public function settpersona()
 	{
@@ -39,49 +39,34 @@ class Persona extends CI_Controller
 		$this->load->model('Persona_model');
 		$respuesta=$this->Persona_model->add_persona($persona);
 		if($respuesta>0){
-
-			//$url=base_url()."Personas/".$persona->id_tp."/";
-			//$url="../../Personas/".$persona->id_tp."/";
-			$url="../../../";
-			if(file_exists($url)){
-				echo "e";
-				mkdir($url."aaa/",777);
-			}else{
-				echo "err";
+			
+			$url="Document/Personas/".$persona->id_tp."/";
+			if(!file_exists($url)){
+				if(mkdir($url,777)){
+				}
 			}
-			/*if(move_uploaded_file($_FILES["file0"]["tmp_name"],$url)){
+			if(!file_exists($url.$respuesta)){
+				if(mkdir($url.$respuesta."/",777)){
+				}
+			}
+
+			$url=$url.$respuesta."/";
+
+			if(move_uploaded_file($_FILES["file0"]["tmp_name"],$url.$_FILES["file0"]["name"])){
 				$urlavatar=$url."".$_FILES["file0"]["name"];
 				$resp = $this->Persona_model->set_avatarpersona($respuesta,$urlavatar);
 				if($resp>0){
 					echo $resp;
 				}else{
-					echo -1;	
+					echo "Er2";	
 				}
 
 			}else{
-				echo -1;
-			}*/
-			//echo $respuesta;
+				echo "Er1";
+			}
 		}else{
-			echo 0;
+			echo "Er0";
 		}
-
-
-		//echo $_POST["Datos"];
-		//echo  $_FILES["file0"]["name"];
-		//echo $persona->ci;
-
-		//$persona = json_decode(file_get_contents('php://input'), true);
-		//$aux['ci']
-		/*$this->load->model('TipoPersona_model');
-		$_POST = json_decode(file_get_contents('php://input'), true);
-		$persona = $this->input->post();
-		$respuesta=$this->TipoPersona_model->add_persona($persona);
-		if($respuesta>0){
-			echo $respuesta;
-		}else{
-			echo 0;
-		}*/
 
 	}
 
